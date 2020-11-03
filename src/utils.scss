@@ -1,0 +1,37 @@
+//Variables
+$root-font-size: 16px;
+$black: #1f1f1f;
+$white: #ebebeb;
+
+$blue: #044BD9;
+$dark-blue: #033E8C;
+$orange: #F24405;
+$red: #F21905;
+
+$medium-screen: 1024px;
+$small-screen: 640px;
+
+//Functions
+@function toREM($x){
+	$result: $x / $root-font-size * 1rem;
+	@return $result;
+}
+
+//Responsive Mixin
+@mixin deviceScreen($type){
+	@if $type == big{
+		@media only screen and (min-width: $medium-screen){
+			@content;
+		}
+	}
+	@else if $type == medium{
+		@media only screen and (max-width: $medium-screen){
+			@content;
+		}
+	}
+	@else if $type == small{
+		@media only screen and (max-width: $small-screen){
+			@content;
+		}
+	}
+}

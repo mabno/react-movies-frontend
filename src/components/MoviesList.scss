@@ -1,0 +1,20 @@
+@import '../utils';
+
+.movie-list{
+	--min-width: 400px;
+	flex: 1;
+	display: grid;
+	grid-gap: toREM(20px);
+	grid-template-columns: repeat(auto-fill, minmax(var(--min-width), 1fr));
+	align-items: flex-start;
+
+	@include deviceScreen(medium){
+		--min-width: 250px;
+	}
+}
+
+.list-message{
+	grid-column: 1 / -1;
+	color: darken($white, 30%);
+	text-align: center;
+}

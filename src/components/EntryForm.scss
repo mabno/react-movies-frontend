@@ -1,0 +1,94 @@
+@import '../utils';
+
+.entry-form{
+	padding: toREM(40px);
+	width: 100%;
+	max-width: 400px;
+	background-color: lighten($white, 5%);
+	box-shadow: 0 15px 25px 0 rgba(0,0,0,.1);
+	border-radius: 2px;
+
+	&__title{
+		margin-bottom: toREM(30px);
+		font-size: toREM(30px);
+		text-align: center;
+	}
+
+	&__error{
+		width: 100%;
+		margin-top: toREM(20px);
+		padding: toREM(5px);
+		color: $red;
+	}
+
+	&__buttons{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: toREM(30px);
+	}
+}
+
+.entry-field{
+	display: flex;
+	width: 100%;
+	margin-bottom: toREM(20px);
+	padding: toREM(10px);
+	background-color: darken($white, 1%);
+	border-radius: 3px;
+	transition: box-shadow .2s;
+
+	&:last-of-type{
+		margin-bottom: 0;
+	}
+
+	&:focus-within{
+		box-shadow: 0 0 0 1px $blue;
+		.entry-field__icon{
+			color: $blue;
+		}
+	}
+
+	&__icon{
+		margin-right: toREM(10px);
+		color: darken($white, 30%);
+		font-size: toREM(20px);
+		transition: color .2s;
+	}
+
+	&__input{
+		flex: 1;
+		font-size: toREM(18px);
+
+		&:placeholder{
+			color: darken($white, 30%);;
+		}
+	}
+}
+
+.entry-button{
+	padding: 10px 50px;
+	color: $white;
+	background-color: $blue;
+	border-radius: 2px;
+	transition: background-color .2s;
+
+	&:hover{
+		background-color: $dark-blue;
+	}
+
+	&.disabled{
+		pointer-events: none;
+		background-color: darken($white, 30%);
+	}
+}
+
+.link-button{
+	color: $blue;
+	transition: color .2s;
+
+	&:hover{
+		color: $dark-blue;
+		text-decoration: underline;
+	}
+}

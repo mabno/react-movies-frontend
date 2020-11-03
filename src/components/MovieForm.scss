@@ -1,0 +1,58 @@
+@import '../utils';
+
+.movie-form{
+	@include deviceScreen(big){
+		position: sticky;
+	}
+	top: toREM(30px);
+	width: 100%;
+	max-width: 400px;
+	margin: 0 toREM(30px) toREM(30px) 0;
+	padding: toREM(20px);
+	background-color: lighten($white, 5%);
+	border-radius: 2px;
+	box-shadow: 0 1px 1px 1px rgba(0,0,0,.1);
+
+	@include deviceScreen(small){
+		margin-right: 0;
+	}
+
+	&__title{
+		margin-bottom: toREM(10px);
+		text-align: center;
+	}
+
+	&__input, &__textarea{
+		display: block;
+		width: 100%;
+		margin-bottom: toREM(10px);
+		padding: toREM(5px);
+		border: 1px solid darken($white, 30%);
+		transition: all .2s;
+
+		&:placeholder{
+			color: darken($white, 30%);;
+		}
+
+		&:focus{
+			background-color: darken($white, 5%);
+		}
+	}
+
+	&__textarea{
+		margin-bottom: toREM(10px);
+		resize: none;
+	}
+
+	&__row{
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&__error{
+		width: 100%;
+		margin-bottom: toREM(10px);
+		padding: toREM(5px);
+		color: $red;
+	}
+}

@@ -1,0 +1,162 @@
+@import 'utils';
+
+//Font faces
+@font-face{
+	font-family: 'Titilium';
+	font-weight: normal;
+	src: url('./fonts/TitilliumWeb-Regular.ttf') format('truetype');
+}
+
+@font-face{
+	font-family: 'Titilium';
+	font-weight: bold;
+	src: url('./fonts/TitilliumWeb-Bold.ttf') format('truetype');
+}
+
+// Root styles
+:root{
+	font-family: 'Titilium', sans-serif;
+	font-size: $root-font-size;
+	
+	@include deviceScreen(medium){
+		font-size: $root-font-size - 2px;
+	}
+}
+
+//Reset styles
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+h1{
+	margin: 0;
+}
+
+p{
+	margin: 0;
+}
+
+li {
+	list-style: none;
+}
+
+a{
+	color: inherit;
+	text-decoration: none;
+}
+
+input{
+	font-size: inherit;
+	background-color: transparent;
+	border: none;
+	&:focus{
+		outline: none;
+	}
+}
+
+textarea{
+	background-color: transparent;
+	&:focus{
+		outline: none;
+	}
+}
+
+button{
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+
+	&:focus{
+		outline: none;
+	}
+}
+
+//Generals styles
+body{
+	color: $black;
+	background-color: $white;
+}
+
+.app-container{
+	$padding: toREM(16px);
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: calc(1300px + #{$padding});
+	min-height: 100vh;
+	margin: 0 auto;	
+	padding: 0 $padding;
+}
+
+.main-content{
+	position: relative;
+	flex: 1;
+	display: flex;
+}
+
+.centered-content{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.centered-content--start{
+	@extend .centered-content;
+	align-items: flex-start;
+}
+
+.page{
+	flex: 1;
+}
+
+.page-enter {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+ 	opacity: 0;
+}
+
+.page-enter-active {
+ 	opacity: 1;
+  	transition: opacity 300ms;
+}
+
+.page-exit {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+  	opacity: 1;
+}
+
+.page-exit-active {
+	opacity: 0;
+	transition: opacity 300ms;
+}
+
+.action-button{
+	color: $white;
+	letter-spacing: 1px;
+	transition: opacity .2s;
+
+	&:nth-child(2n-1){
+		margin-right: toREM(15px);
+	}
+
+	&:hover{
+		opacity: .6;
+	}
+}
+
+.action-button--orange{
+	@extend .action-button;
+	color: $orange;
+}
