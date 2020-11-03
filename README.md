@@ -2,7 +2,9 @@
 React App that allows you upload and save your favorites movies
 
 Features:
-  - Authentication system (login and signup)
+  - Authentication system (register and login)
+  - Sessions
+  - Redux
   - Movies CRUD
   - Validations
 
